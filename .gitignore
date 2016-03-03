@@ -2,6 +2,9 @@ bin/
 .classpath
 settings/
 .settings
+.idea
+ListADP.iml
+
 
 # Windows image file caches
 Thumbs.db
