@@ -6,28 +6,17 @@
  */
 
 public class ListItem {
+    public int data;
 
-    //data
-    int data;
-
-    ListItem next = null;
-    ListItem previous = null;
+    public ListItem next = null;
+    public ListItem prev = null;
 
     ListItem(int newData){
         data = newData;
-        next = null;
     }
     ListItem(ListItem newItem){
-        data = newItem.getData();
-        next = newItem.getNext();
-    }
-    public int getData(){
-        return data;
-    }
-    public ListItem getNext(){
-        return next;
-    }
-    public void setNext(ListItem refNext){
-        next = refNext;
+        data = newItem.data;
+        next = newItem.next;
+        prev = newItem.prev;
     }
 }
