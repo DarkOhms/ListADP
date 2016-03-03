@@ -9,18 +9,23 @@
  *  
  */
 
+<<<<<<< HEAD
 public class ListItem {
     
 	//members are public because Mike said it was cool.  :)
 	public int data;
+=======
+public class ListItem <T> {
+    public T data;
+>>>>>>> origin/master
 
-    public ListItem next = null;
-    public ListItem prev = null;
+    public ListItem<T> next = null;
+    public ListItem<T> prev = null;
 
-    ListItem(int newData){
+    ListItem(T newData){
         data = newData;
     }
-    ListItem(ListItem newItem){
+    ListItem(ListItem<T> newItem){
         data = newItem.data;
         next = newItem.next;
         prev = newItem.prev;
