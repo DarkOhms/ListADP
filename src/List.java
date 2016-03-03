@@ -1,8 +1,8 @@
 
-abstract class List {
+abstract class List <T> {
 
-    ListItem head = null;
-    ListItem tail = null;
+    ListItem<T> head = null;
+    ListItem<T> tail = null;
     int count;
 
     public void init(){
@@ -11,12 +11,11 @@ abstract class List {
 
     public void insert(ListItem newEntry){
 
-        ListItem nextEntry = new ListItem(newEntry);
-        if(head == null){
+        ListItem<T> nextEntry = new ListItem<>(newEntry);
+        if (head == null) {
             head = nextEntry;
             tail = head;
-        }else
-
+        } else
             count++;
     }
 
@@ -24,12 +23,11 @@ abstract class List {
 
     }
 
-    public ListItem search(){
-
-        return found;
+    public ListItem<T> search(){
+        return found; // what is found?
     }
     public boolean isEmpty(){
-        if(head == null)
+        if (head == null)
             return true;
         else
             return false;

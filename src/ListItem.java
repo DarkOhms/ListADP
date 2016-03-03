@@ -5,16 +5,16 @@
  *  2/27/2016 Start
  */
 
-public class ListItem {
-    public int data;
+public class ListItem <T> {
+    public T data;
 
-    public ListItem next = null;
-    public ListItem prev = null;
+    public ListItem<T> next = null;
+    public ListItem<T> prev = null;
 
-    ListItem(int newData){
+    ListItem(T newData){
         data = newData;
     }
-    ListItem(ListItem newItem){
+    ListItem(ListItem<T> newItem){
         data = newItem.data;
         next = newItem.next;
         prev = newItem.prev;
