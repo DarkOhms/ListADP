@@ -5,10 +5,6 @@ abstract class List <T> {
     ListItem<T> tail = null;
     int count;
 
-    public void init(){
-
-    }
-
     public void insert(ListItem newEntry){
 
         ListItem<T> nextEntry = new ListItem<>(newEntry);
@@ -33,7 +29,13 @@ abstract class List <T> {
             return false;
     }
     public boolean isFull(){
-
+       
+    	ListItem<T> test = new ListItem<T>;
+        if(test == null)
+        	return true;
+        else
+        	return false;
+        
     }
     public void sort();
 }

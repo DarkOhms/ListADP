@@ -9,15 +9,9 @@
  *  
  */
 
-<<<<<<< HEAD
-public class ListItem {
-    
-	//members are public because Mike said it was cool.  :)
-	public int data;
-=======
 public class ListItem <T> {
     public T data;
->>>>>>> origin/master
+
 
     public ListItem<T> next = null;
     public ListItem<T> prev = null;
