@@ -1,7 +1,7 @@
 
-public class OrderedList extends List {
+public class OrderedList<T extends Comparable<T>> extends List<T> {
 	
-	public void insert(ListItem newEntry){
+	public void insert(T newEntry){
 
 	        ListItem<T> nextEntry = new ListItem<T>(newEntry);
 	        if(head == null) {
@@ -16,7 +16,7 @@ public class OrderedList extends List {
 	        	 tail.next = nextEntry;
 	             tail = nextEntry;
 	        }else{
-	        	ListItem temp = head;
+	        	ListItem<T> temp = head;
 	        	 while (temp.next.data.compareTo(nextEntry.data) < 0)
 	                 temp = temp.next;
 	             nextEntry.next = temp.next;

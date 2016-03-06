@@ -16,6 +16,8 @@ public class ListItem <T> {
     public ListItem<T> next = null;
     public ListItem<T> prev = null;
 
+    ListItem(){};
+    
     ListItem(T newData){
         data = newData;
     }

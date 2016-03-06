@@ -1,11 +1,11 @@
 
-class List <T extends Comparable> {
+public class List <T> {
 
     ListItem<T> head = null;
     ListItem<T> tail = null;
     int count;
 
-    public void insert(ListItem newEntry){
+    public void insert(T newEntry){
 
         ListItem<T> nextEntry = new ListItem<T>(newEntry);
         if(head == null) {
@@ -23,7 +23,7 @@ class List <T extends Comparable> {
     }
 
     public ListItem<T> search(){
-        return found; // what is found?
+        return new ListItem<T>(); // what is found?
     }
     public boolean isEmpty(){
         if (head == null)
@@ -31,14 +31,16 @@ class List <T extends Comparable> {
         else
             return false;
     }
+    
+    @SuppressWarnings("unused")
     public boolean isFull(){
-       
+       try{
     	ListItem<T> test = new ListItem<T>();
-        if(test == null)
-        	return true;
-        else
-        	return false;
+       }catch(OutOfMemoryError e){
+       return true;}
+       
+       return false;
         
     }
-    public void sort();
+    public void sort(){}
 }
