@@ -4,6 +4,7 @@ settings/
 .settings
 .idea
 *.iml
+out
 
 
 # Windows image file caches
