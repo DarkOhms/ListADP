@@ -3,7 +3,8 @@ bin/
 settings/
 .settings
 .idea
-ListADP.iml
+*.iml
+out
 
 
 # Windows image file caches
