@@ -22,9 +22,25 @@ public class List <T> {
 
     }
 
-    public ListItem<T> search(){
-        return new ListItem<T>(); // what is found?
-    }
+    public boolean search(T data){
+        
+    	Iterator<T> it = this.iterator();
+    	
+    	if (data == null) {
+    	    while(it.hasNext()) {
+    	        if (it.next() == null) {
+    	            return true;
+    	        }
+    	    }
+    	} else {
+    	    while(it.hasNext()) {
+    	        if (data.equals(it.next())) {
+    	            return true;
+    	        }
+    	    }
+    	}
+    	return false;
+   }
     public boolean isEmpty(){
         if (head == null)
             return true;

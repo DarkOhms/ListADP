@@ -14,4 +14,12 @@ public class Iterator<T> {
 	    currentItem = temp.next;
 	    return temp.data;  
   }
+  
+  public boolean hasNext(){
+	 
+	  if(currentItem != null)
+		  return true;
+	  else
+		  return false;
+  }
 }

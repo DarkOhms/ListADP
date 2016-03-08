@@ -25,5 +25,11 @@ public class Driver {
 	    }
 	 
 	    reader.close();
+	    Iterator<Integer> it = myMothaFuckinList.iterator();
+	    
+	    //iterate
+	    while(it.hasNext())
+	    	System.out.println(it.next().toString());
+	    
 	}
 }
