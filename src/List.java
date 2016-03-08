@@ -17,7 +17,7 @@ public class List <T> {
         }
         	count++;
     }
-
+  
     public void delete(){
 
     }
@@ -43,4 +43,10 @@ public class List <T> {
         
     }
     public void sort(){}
+    
+    public Iterator<T> iterator(){
+    	Iterator<T> it = new Iterator<T>(head);
+    	return it;
+    }
+    
 }
