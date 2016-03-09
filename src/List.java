@@ -18,8 +18,25 @@ public class List <T> {
         	count++;
     }
   
-    public void delete(){
-
+    public void delete(T data){
+    
+      ListItem<T> temp = new ListItem<T>(data);
+      Iterator<T> it = this.iterator();
+      
+      //head case lol!
+      if(head.data == data){
+    	 head = head.next;
+      }else{
+    	  while(it.hasNext()){
+    		  temp = it.nextItem();
+    		  if(temp.data.equals(data)){
+    			  temp = it.nextItem().prev;
+    		  }
+    		  
+    		  
+    	  }
+      }
+    	
     }
 
     public boolean search(T data){
@@ -28,13 +45,13 @@ public class List <T> {
     	
     	if (data == null) {
     	    while(it.hasNext()) {
-    	        if (it.next() == null) {
+    	        if (it.nextData() == null) {
     	            return true;
     	        }
     	    }
     	} else {
     	    while(it.hasNext()) {
-    	        if (data.equals(it.next())) {
+    	        if (data.equals(it.nextData())) {
     	            return true;
     	        }
     	    }

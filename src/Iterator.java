@@ -7,13 +7,21 @@ public class Iterator<T> {
 	  currentItem = head;
   }
   
-  public T next(){  
+  public T nextData(){  
 	  
 	    ListItem<T> temp = new ListItem<T>();
 	    temp = currentItem;
 	    currentItem = temp.next;
 	    return temp.data;  
   }
+  
+  ListItem<T> nextItem(){  
+	  
+	    ListItem<T> temp = new ListItem<T>();
+	    temp = currentItem;
+	    currentItem = temp.next;
+	    return temp;  
+}
   
   public boolean hasNext(){
 	 

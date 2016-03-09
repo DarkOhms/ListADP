@@ -9,7 +9,7 @@ public class Driver {
 		Integer temp = 25;
 		String userInput = "";
 	    
-		List<Integer> myMothaFuckinList = new List<Integer>();
+		OrderedList<Integer> myMothaFuckinList = new OrderedList<Integer>();
 	
 	    Scanner reader = new Scanner(System.in);
 	    
@@ -29,7 +29,7 @@ public class Driver {
 	    
 	    //iterate
 	    while(it.hasNext())
-	    	System.out.println(it.next().toString());
+	    	System.out.println(it.nextData().toString());
 	    
 	}
 }
