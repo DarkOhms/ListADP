@@ -71,6 +71,21 @@ public class Driver {
 	    System.out.println(pancake.pop());
 	    System.out.println(pancake.pop());
 	    System.out.println(pancake.pop());
+	    
+	  //test queue
+	    Queue<Double> cash = new Queue<Double>();
+	    
+	    cash.enqueue(25.60);
+	    cash.enqueue(30.50);
+	    cash.enqueue(66.70);
+	    cash.enqueue(75.21);
+	    cash.enqueue(100.00);
+	    
+	    System.out.println(cash.dequeue());
+	    System.out.println(cash.dequeue());
+	    System.out.println(cash.dequeue());
+	    System.out.println(cash.dequeue());
+	    System.out.println(cash.dequeue());
 	}
 	 
 }

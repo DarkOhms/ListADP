@@ -42,6 +42,7 @@ public class List <T> {
     		    }
     		   
     	    }
+      count--;
           }
   
     public boolean search(T data){
