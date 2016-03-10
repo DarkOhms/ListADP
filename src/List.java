@@ -17,14 +17,51 @@ public class List <T> {
         }
         	count++;
     }
-
-    public void delete(){
-
-    }
-
-    public ListItem<T> search(){
-        return new ListItem<T>(); // what is found?
-    }
+  
+    public void delete(T data){
+    
+      Iterator<T> it = this.iterator();
+      
+      //head case lol!
+      if(head.data == data){
+    	 head = head.next;
+      }else{
+    	  if(tail.data == data){
+    		  tail = tail.prev;
+    	  }else{
+    		  ListItem<T> i = head.next;
+    		  while (i != null) {
+    		    if(i.data.equals(data)){
+    		      i.prev.next = i.next;	
+    		      break;
+    		    }
+    		    
+    		      i = i.next;
+    		  }
+    		    }
+    		   
+    	    }
+          }
+  
+    public boolean search(T data){
+        
+    	Iterator<T> it = this.iterator();
+    	
+    	if (data == null) {
+    	    while(it.hasNext()) {
+    	        if (it.nextData() == null) {
+    	            return true;
+    	        }
+    	    }
+    	} else {
+    	    while(it.hasNext()) {
+    	        if (data.equals(it.nextData())) {
+    	            return true;
+    	        }
+    	    }
+    	}
+    	return false;
+   }
     public boolean isEmpty(){
         if (head == null)
             return true;
@@ -43,4 +80,10 @@ public class List <T> {
         
     }
     public void sort(){}
+    
+    public Iterator<T> iterator(){
+    	Iterator<T> it = new Iterator<T>(head);
+    	return it;
+    }
+    
 }
