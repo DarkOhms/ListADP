@@ -17,7 +17,10 @@ public class Driver {
 	    
 	    while(!userInput.equals("done")){
 	      System.out.print("Enter the next Integer: ");
+	      
 	      userInput = reader.nextLine();
+	      //remember to do verify input
+	      
 	      if(!userInput.equals("done")){
 	        temp = Integer.valueOf(userInput);
 	        myMothaFuckinList.insert(temp);
@@ -25,7 +28,7 @@ public class Driver {
 	    }
 	
 	    Iterator<Integer> it = myMothaFuckinList.iterator();
-	    
+	   
 	    //iterate
 	    while(it.hasNext())
 	    	System.out.println(it.nextData().toString());
@@ -40,17 +43,30 @@ public class Driver {
 	    	System.out.println(userInput + " not found.");
 	    
 	    //delete
-	    System.out.println("Enter an Integer to delete from the list: ");
-	    userInput = reader.nextLine();
+	    System.out.print("Enter an Integer to delete from the list: ");
+	    userInput = reader.next();
 	    
 	    myMothaFuckinList.delete(Integer.valueOf(userInput));
+	    it = myMothaFuckinList.iterator();
 	    
 	  //iterate
 	    while(it.hasNext())
 	    	System.out.println(it.nextData().toString());
 	   
 	    reader.close();
+	  //test stack
+	    Stack<String> pancake = new Stack<String>();
+	    pancake.push("Let's");
+	    pancake.push("Test");
+	    pancake.push("the");
+	    pancake.push("stack.");
 	    
+	    Iterator<String> syrup = pancake.iterator();
+	    
+	    while(syrup.hasNext())
+	    	System.out.println(syrup.nextData().toString());
+	    
+	    System.out.println(pancake.showTop());
 	}
 	 
 }
