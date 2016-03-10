@@ -12,6 +12,7 @@ public class List <T> {
             head = nextEntry;
             tail = head;
         }else{
+        	nextEntry.prev = tail;
         	tail.next = nextEntry;
         	tail = nextEntry;
         }
@@ -19,8 +20,6 @@ public class List <T> {
     }
   
     public void delete(T data){
-    
-      Iterator<T> it = this.iterator();
       
       //head case lol!
       if(head.data == data){
