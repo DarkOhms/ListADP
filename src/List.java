@@ -24,9 +24,11 @@ public class List <T> {
       //head case lol!
       if(head.data == data){
     	 head = head.next;
+    	 head.prev = null;
       }else{
     	  if(tail.data == data){
     		  tail = tail.prev;
+    		  tail.next = null;
     	  }else{
     		  ListItem<T> i = head.next;
     		  while (i != null) {
