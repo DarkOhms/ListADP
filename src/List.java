@@ -3,7 +3,7 @@ public class List <T> {
 
     ListItem<T> head = null;
     ListItem<T> tail = null;
-    int count;
+    int count = 0;
 
     public void insert(T newEntry){
 
