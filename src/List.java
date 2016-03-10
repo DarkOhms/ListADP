@@ -20,25 +20,29 @@ public class List <T> {
   
     public void delete(T data){
     
-      ListItem<T> temp = new ListItem<T>(data);
       Iterator<T> it = this.iterator();
       
       //head case lol!
       if(head.data == data){
     	 head = head.next;
       }else{
-    	  while(it.hasNext()){
-    		  temp = it.nextItem();
-    		  if(temp.data.equals(data)){
-    			  temp = it.nextItem().prev;
+    	  if(tail.data == data){
+    		  tail = tail.prev;
+    	  }else{
+    		  ListItem<T> i = head.next;
+    		  while (i != null) {
+    		    if(i.data.equals(data)){
+    		      i.prev.next = i.next;	
+    		      break;
+    		    }
+    		    
+    		      i = i.next;
     		  }
-    		  
-    		  
-    	  }
-      }
-    	
-    }
-
+    		    }
+    		   
+    	    }
+          }
+  
     public boolean search(T data){
         
     	Iterator<T> it = this.iterator();

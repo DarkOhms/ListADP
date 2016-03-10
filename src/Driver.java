@@ -23,13 +23,34 @@ public class Driver {
 	        myMothaFuckinList.insert(temp);
 	      }
 	    }
-	 
-	    reader.close();
+	
 	    Iterator<Integer> it = myMothaFuckinList.iterator();
 	    
 	    //iterate
 	    while(it.hasNext())
 	    	System.out.println(it.nextData().toString());
 	    
+	    //search
+	    System.out.println("Enter an Integer for search: ");
+	    userInput = reader.nextLine();
+	    
+	    if(myMothaFuckinList.search(Integer.valueOf(userInput)))
+	    	System.out.println(userInput + " found.");
+	    else
+	    	System.out.println(userInput + " not found.");
+	    
+	    //delete
+	    System.out.println("Enter an Integer to delete from the list: ");
+	    userInput = reader.nextLine();
+	    
+	    myMothaFuckinList.delete(Integer.valueOf(userInput));
+	    
+	  //iterate
+	    while(it.hasNext())
+	    	System.out.println(it.nextData().toString());
+	   
+	    reader.close();
+	    
 	}
+	 
 }

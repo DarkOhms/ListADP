@@ -15,14 +15,6 @@ public class Iterator<T> {
 	    return temp.data;  
   }
   
-  ListItem<T> nextItem(){  
-	  
-	    ListItem<T> temp = new ListItem<T>();
-	    temp = currentItem;
-	    currentItem = temp.next;
-	    return temp;  
-}
-  
   public boolean hasNext(){
 	 
 	  if(currentItem != null)
