@@ -8,8 +8,13 @@ public class Queue <T> extends List <T> {
 	
 	public T dequeue(){
 		
-		T tempData = head.data;
-		ListItem <T> newHead = new ListItem<T>(head.next.data);
+		T tempData = null;
+		
+		if(count > 0){
+			tempData = head.data;
+		}
+		
+		ListItem <T> newHead = new ListItem<T>();
 		
 		if(count == 0){
 			tempData = null;
@@ -26,7 +31,7 @@ public class Queue <T> extends List <T> {
 		}
 		
 		if(count > 2){
-			newHead = head;
+			newHead = head.next;
 			newHead.next = head.next.next;
 			head = newHead;
 		}

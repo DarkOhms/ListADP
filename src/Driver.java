@@ -86,6 +86,7 @@ public class Driver {
 	    System.out.println(cash.dequeue());
 	    System.out.println(cash.dequeue());
 	    System.out.println(cash.dequeue());
+	    System.out.println(cash.dequeue());
 	}
 	 
 }
