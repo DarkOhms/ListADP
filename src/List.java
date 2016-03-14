@@ -1,4 +1,61 @@
-
+/*
+ * Luke Martin
+ * CISP 430
+ * Dixon
+ * 
+ *  Class Associations
+ *  
+ *  List<T> ----------- 1:m contains --- ListItem<T>
+ *  List<T> ----------- 1:m uses  ------ Iterator<T>
+ *  Iterator<T> ------- 1:1 uses ------- ListItem<T>
+ *  OrderedList<T> ---- 1:1 extends ---- List<T>
+ *  Stack<T> ---------- 1:1 extends ---- List<T>
+ *  Queue<T> ---------- 1:1 extends ---- List<T>
+ *  
+ *  Class List<T>
+ *  
+ *  (#)ListItem<T> head
+ *  (#)ListItem<T> tail
+ *  (#)int count
+ *  (+)void insert(T) //insert list item into the list at tail
+ *  (+)void delete(T)  //deletes first instance of a ListItem containing T data
+ *  (+)boolean search(T) //returns true if the data is in the list
+ *  (+)boolean isEmpty() //returns true if head is null
+ *  (+)boolean isFull()  // attempts to allocate memory for a new list item
+ *  (+)int getCount()  // returns count
+ *  (+)Iterator<T> iterator() //gets an iterator for the list 
+ *  
+ *  Class OrderedList<T extends Comparable<T>> extends List<T>
+ *  
+ *  (+)void insert(T) // performs a sorted insert
+ *  
+ *  Class ListItem<T>
+ *  
+ *  (#)ListItem<T> next
+ *  (#)ListItem<T> prev
+ *  (#)T data
+ *  (#)ListItem() // default constructor
+ *  (#)ListItem(T) // parameterized constructor
+ *  (#)ListItem(ListItem<T>) // parameterized constructor
+ *  
+ *  Class Iterator<T>
+ *  
+ *  (#)ListItem<T> currentItem
+ *  (+)Iterator<T> (ListItem<T>) // constructor
+ *  (+)T nextItem() // gets the next item
+ *  (+)boolean hasNext() //checks if the iterator has gone through the list
+ *  
+ *   Class Stack<T>
+ *   
+ *   (+)push(T) // adds to the tail of the list
+ *   (+)T pop() //reveals and removes a ListItem from the tail
+ *   (+)T showTop() //reveals top
+ *   
+ *   Class Queue<T>
+ *   
+ *   (+)enqueue(T) // inserts a ListItem
+ *   (+)T dequeue() // removes a ListItem from head
+ */
 public class List <T> {
 
     ListItem<T> head = null;
@@ -71,6 +128,10 @@ public class List <T> {
             return false;
     }
     
+    public int getCount(){
+    	return count;
+    }
+    
     @SuppressWarnings("unused")
     public boolean isFull(){
        try{
@@ -81,8 +142,7 @@ public class List <T> {
        return false;
         
     }
-    public void sort(){}
-    
+ 
     public Iterator<T> iterator(){
     	Iterator<T> it = new Iterator<T>(head);
     	return it;

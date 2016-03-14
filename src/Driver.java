@@ -5,7 +5,7 @@ public class Driver {
 
 	public static void main(String[] args){
 		
-		/*
+		
 		Integer temp = 25;
 		String userInput = "";
 	    
@@ -53,7 +53,7 @@ public class Driver {
 	    while(it.hasNext())
 	    	System.out.println(it.nextData().toString());
 	   
-	    reader.close();*/
+	    reader.close();
 	  //test stack
 	    Stack<String> pancake = new Stack<String>();
 	    pancake.push("Let's");
