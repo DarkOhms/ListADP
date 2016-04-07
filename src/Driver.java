@@ -1,33 +1,30 @@
 
-import java.util.*;
+//import java.util.*;
 
 public class Driver {
 
 	public static void main(String[] args){
+		List<String> myList = new List<String>();
 		
-		
+		myList.insert("This is head.");
+		/*
 		Integer temp = 25;
 		String userInput = "";
 	    
-		OrderedList<Integer> myMothaFuckinList = new OrderedList<Integer>();
+		//make an ordered list
+		OrderedList<Integer> myProfessionalList = new OrderedList<Integer>();
 	
-	    Scanner reader = new Scanner(System.in);
-	    
-	    System.out.println("Enter an Integer for insert then done when finished.");
-	    
-	    while(!userInput.equals("done")){
-	      System.out.print("Enter the next Integer: ");
+	   
+	    //put 5 items into the list  
+		myProfessionalList.insert(12000); 
+	    myProfessionalList.insert(12);
+	    myProfessionalList.insert(77);
+	    myProfessionalList.insert(999);
+	    myProfessionalList.insert(6);
 	      
-	      userInput = reader.nextLine();
-	      //remember to do verify input
-	      
-	      if(!userInput.equals("done")){
-	        temp = Integer.valueOf(userInput);
-	        myMothaFuckinList.insert(temp);
-	      }
-	    }
 	
-	    Iterator<Integer> it = myMothaFuckinList.iterator();
+	
+	    Iterator<Integer> it = myProfessionalList.iterator();
 	   
 	    //iterate
 	    while(it.hasNext())
@@ -37,7 +34,7 @@ public class Driver {
 	    System.out.println("Enter an Integer for search: ");
 	    userInput = reader.nextLine();
 	    
-	    if(myMothaFuckinList.search(Integer.valueOf(userInput)))
+	    if(myProfessionalList.search(Integer.valueOf(userInput)))
 	    	System.out.println(userInput + " found.");
 	    else
 	    	System.out.println(userInput + " not found.");
@@ -46,8 +43,8 @@ public class Driver {
 	    System.out.print("Enter an Integer to delete from the list: ");
 	    userInput = reader.next();
 	    
-	    myMothaFuckinList.delete(Integer.valueOf(userInput));
-	    it = myMothaFuckinList.iterator();
+	    myProfessionalList.delete(Integer.valueOf(userInput));
+	    it = myProfessionalList.iterator();
 	    
 	  //iterate
 	    while(it.hasNext())
@@ -87,6 +84,7 @@ public class Driver {
 	    System.out.println(cash.dequeue());
 	    System.out.println(cash.dequeue());
 	    System.out.println(cash.dequeue());
+	    */
 	}
 	 
 }

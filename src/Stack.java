@@ -15,32 +15,17 @@ public class Stack <T> extends List<T>{
   
   public T pop(){
 	  
-	  T tempData = null;
-	  
-	  if(head == null){
-		  tempData = null;
-	  }
-	  if(count == 2){
-		  tempData = tail.data;
-		  tail = null;
-	  }
-	  if(count == 1){
-		  tempData = head.data;
-		  head = null;
-	  }
-	  if(count > 2){
-		  tempData = tail.data;
-		  
-		  ListItem<T> tempItem = tail.prev;
-		  tempItem.next = null;
-		  tail = tempItem;
-		 
-	  }
-	  count-- ;
-	  return tempData;
+	T tempData = showTop();
+	removeFromTail();
+	return tempData;
+	
   }
   public T showTop(){
 	  
-	  return tail.data;
+	  if(tail != null){
+	    return tail.data;
+	  }else{
+		  return null;
+	  }
   }
 }

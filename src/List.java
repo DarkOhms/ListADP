@@ -7,6 +7,8 @@
  *  
  *  List<T> ----------- 1:m contains --- ListItem<T>
  *  List<T> ----------- 1:m uses  ------ Iterator<T>
+ *  ListItem<T> ------- 1:1 includes --- T
+ *  ListItem<T> ------- 1:2 includes --- ListItem<T>
  *  Iterator<T> ------- 1:1 uses ------- ListItem<T>
  *  OrderedList<T> ---- 1:1 extends ---- List<T>
  *  Stack<T> ---------- 1:1 extends ---- List<T>
@@ -74,6 +76,38 @@ public class List <T> {
         	tail = nextEntry;
         }
         	count++;
+    }
+    
+    public void removeFromHead(){
+    	
+    	if(count == 1){
+    		head = null;
+    		tail = null;
+    		count--;
+    	}
+    	if(count > 1){
+    		head.next.prev = null;
+    		head = head.next;
+    		count--;
+    	}
+    	
+    	
+    }
+    
+ public void removeFromTail(){
+    	
+    	if(count == 1){
+    		head = null;
+    		tail = null;
+    		count--;
+    	}
+    	if(count > 1){
+    		tail.prev.next = null;
+    		tail = tail.prev;
+    		count--;
+    	}
+    	
+    	
     }
   
     public void delete(T data){
